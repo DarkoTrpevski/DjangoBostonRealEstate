@@ -123,9 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 # Adding the static files (CSS, JavaScript, Images) from our theme
-# When we deploy our APP, we run a command called collect static.
+# When we deploy our APP, we run a command called collectstatic ( python manage.py collectstatic ).
 # That command goes into all our INSTALLED_APPS in the btre > settings.py. If the APP has a static folder,
 # it takes everything out and puts it into a root static folder
+
+# What the collectstatic does is, it goes through all our INSTALLED_APPS, if they have a folder called
+# static it copies their contents, creates a NEW FOLDER called static in our ROOT
+# directory in our case(btre_project), and pastes their contents in the new folder. This also adds the
+# static folder for the admin APP as well. We also don't want this folder in our git repository
+# so we have to add it to our .gitignore file for security purposes.
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 # We want to set the location of the static folder we just created in btre > static
