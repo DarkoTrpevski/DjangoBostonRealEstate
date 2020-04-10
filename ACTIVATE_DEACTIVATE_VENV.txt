@@ -1,0 +1,2 @@
+c:/Users/User/Desktop/webdev/btre_project/venv/Scripts/activate.bat
+c:/Users/User/Desktop/webdev/btre_project/venv/Scripts/deactivate.bat
