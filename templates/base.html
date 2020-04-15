@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <!-- 
     We want a base file, which the other html documents will extend from
@@ -6,15 +7,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <!-- What( "{% static 'css/all.css' %}" )will do is it will look for the static folder in the ROOT DIR-->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <!-- Custom -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}" />
     <title>BT Real Estate</title>
   </head>
 
   <body>
+    <!-- Top Bar -->
+    {% include 'partials/_topbar.html' %}
 
+    <!-- Navbar -->
+    {% include 'partials/_navbar.html' %}
+
+    <!-- Main Content-->
     <!-- The below line is using the "Jinja tags" to output any template that we will extend -->
-    {% block content %}
-    
-    {% endblock%}
-    
+    {% block content %} {% endblock%}
+
+    <!-- Footer -->
+    {% include 'partials/_footer.html' %}
+
+    <!-- What( "{% static 'js/main.js' %}" )will do is it will look for the static folder in the ROOT DIR-->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/lightbox.min.js' %}"></script>
   </body>
 </html>
