@@ -22,9 +22,13 @@ from django.conf.urls.static import static
 # When we have the listings, then we can add to the URL Path for example: listings/realtors ETC.
 # What ( include('pages.urls') ) does, is include the urls.py from our pages APP(folder)
 
+# Whenever we add images/videos etc dynamically from our admin along our database our media folder
+# will fill up accordingly, ordered by date of adding.
 # To include our media folder we add + static()
 urlpatterns = [
     path('', include('pages.urls')),
     path('listings/', include('listings.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('contacts/', include('contacts.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

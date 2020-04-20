@@ -8,7 +8,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Font Awesome -->
-    <!-- What( "{% static 'css/all.css' %}" )will do is it will look for the static folder in the ROOT DIR-->
     <link rel="stylesheet" href="{% static 'css/all.css' %}" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
@@ -16,7 +15,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <!-- Lightbox -->
     <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}" />
-    <title>BT Real Estate</title>
+    <title>BT Real Estate {% block title %}{% endblock %}</title>
   </head>
 
   <body>
@@ -27,13 +26,11 @@
     {% include 'partials/_navbar.html' %}
 
     <!-- Main Content-->
-    <!-- The below line is using the "Jinja tags" to output any template that we will extend -->
     {% block content %} {% endblock%}
 
     <!-- Footer -->
     {% include 'partials/_footer.html' %}
 
-    <!-- What( "{% static 'js/main.js' %}" )will do is it will look for the static folder in the ROOT DIR-->
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
